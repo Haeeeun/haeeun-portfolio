@@ -8,6 +8,7 @@ body{
     font-family: 'GmarketSansLight', sans-serif;
 }
 a{
+    all: unset;
     color: white;
 }
 .wrapper{
@@ -54,6 +55,9 @@ section{
     margin-top: 60px;
     font-size: 24px;
     line-height: 1.6;
+}
+.section-01 a{
+    color: black;
 }
 em {
     position: relative;
@@ -142,4 +146,7 @@ em:hover:after {
 .contact em{
     font-size: 24px;
     margin-right: 0;
+}
+.contact a{
+    color: black;
 }
