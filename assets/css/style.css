@@ -136,7 +136,7 @@ em:hover:after {
     width: 100%;
     position: relative;
     text-align: center;
-    top: 50%;˚
+    top: 50%;
     transform: translateY(-50%);
 }
 .contact h1{
