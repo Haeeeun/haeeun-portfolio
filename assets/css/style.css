@@ -62,43 +62,20 @@ section{
     color: black;
 }
 em {
-    position: relative;
-    margin: 0 10px 0 0;
-    color: #000;
+    background-image: linear-gradient(transparent 70%, rgba(24,76,136,0.8) 70%);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    animation: animatedBackground 2s cubic-bezier(0.645, 0.045, 0.355, 1) 0.5s forwards;
     cursor: pointer;
     font-weight: 900;
     font-style: normal;
     font-size: larger;
+    transition: 0.5s;
 }
-em:before {
-    position: absolute;
-    bottom: 3px;
-    left: 0;
-    z-index: -1;
-    width: 0;
-    height: 12px;
-    background-color: rgba(24,76,136,0.8);
-    content: '';
-}
-em:after {
-    position: absolute;
-    top: 17px;
-    right: -16px;
-    font-size: 13px;
-    line-height: 13px;
-    font-family: arial,sans-serif;
-    color: rgba(24,76,136,0.8);
-    letter-spacing: 0;
-}
-em:hover:before {
-    width: 100%;
-    background: rgba(24,76,136,0.8);
-    transition: width .5s ease;
-}
-em:hover:after {
-    width: 100%;
-    background: transparent;
-    transition: all .5s ease;
+@keyframes animatedBackground {
+    to {
+        background-size: 100% 100%;
+    }
 }
 .yupstyle{
     background: url("../images/yupstyle.png") no-repeat;
