@@ -16,23 +16,25 @@
     box-sizing: border-box;
 }
 body, html {
+    font-family: 'GmarketSansLight', sans-serif;
     background: #e4e0e0;
     font-size: 6px;
-    padding: 4rem 2rem;
-    font-family: 'GmarketSansLight', sans-serif;
+    padding: 0;
+    margin: 0;
     height: 100%;
     box-sizing: border-box;
+}
+body{
+    padding: 4rem 20px;
 }
 @media (min-width: 860px) {
     body, html {
         font-size: 8px;
-        padding: 3rem 5rem;
     }
 }
 @media (min-width: 1200px) {
     body, html {
         font-size: 10px;
-        padding: 2rem 3rem;
     }
 }
 button{
@@ -42,75 +44,16 @@ button{
 #icons {
     display: none;
 }
-.header-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 4rem;
-    z-index: 20;
-}
-.header-wrapper .header {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 6rem;
-}
-.header-wrapper .menu-hamburger {
-    position: relative;
-    width: 1.3rem;
-    display: inline-block;
-    vertical-align: middle;
-    background: black;
-    height: 0.2rem;
-    cursor: pointer;
-}
-.header-wrapper .menu-hamburger::before {
-    content: "";
-    width: 1.3rem;
-    height: 0.2rem;
-    background: black;
-    position: absolute;
-    top: -0.4rem;
-}
-.header-wrapper .menu-hamburger::after {
-    content: "";
-    width: 1.3rem;
-    height: 0.2rem;
-    background: black;
-    position: absolute;
-    top: 0.4rem;
-}
-.header-wrapper .menu-txt {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 0.5rem;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-.header-wrapper .logo-wrapper {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.header-wrapper .logo {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-top: 3rem;
-    line-height: 1;
-    font-weight: 600;
-}
-.header-wrapper .logo span {
-    display: block;
-}
 .number-wrapper {
     position: absolute;
     height: 100%;
     width: 12rem;
     z-index: 10;
+}
+@media (max-width: 420px) {
+    .number-wrapper{
+        opacity: 0.5;
+    }
 }
 .number-wrapper .number-count {
     position: relative;
@@ -164,14 +107,13 @@ button{
 .nav-wrapper .nav-line {
     width: 100%;
     height: 0.1rem;
-    background: black;
     margin: 1rem 0;
     background: #666;
 }
 .slider-content {
     position: relative;
     max-width: 112rem;
-    min-width: 480px;
+    min-width: 280px;
     background: #fff;
     margin: 0 auto;
     overflow: hidden;
@@ -192,12 +134,16 @@ button{
 .slider-content .slide:first-child .txt-wrapper span.copy {
     opacity: 1;
 }
+.slider-content .slide:first-child .txt {
+    margin-right: 0 !important;
+}
 .slider-content .slide:nth-child(odd) .img {
     margin-left: 50%;
     transform: translateY(-100%);
 }
 .slider-content .slide:nth-child(odd) .txt {
     transform: translateY(100%);
+    margin-right: 50%;
 }
 .slider-content .slide:nth-child(even) .img {
     transform: translateY(100%);
@@ -235,6 +181,11 @@ button{
     display: table;
     padding: 8rem 14rem;
     background: white;
+}
+@media (max-width: 420px) {
+    .slider-container .slide-content.txt {
+        padding: 24px;
+    }
 }
 .slider-container .slide-content .txt-wrapper {
     position: relative;
@@ -317,6 +268,11 @@ button{
     color: #333333;
     font-size: 14px;
     line-height: 1.5;
+}
+@media (max-width: 860px) {
+    .slider-container .slide-content .txt-wrapper p.excerpt {
+        font-size: 11px;
+    }
 }
 .slider-container .slide-content .txt-wrapper span.view-all {
     color: #aeacab;
