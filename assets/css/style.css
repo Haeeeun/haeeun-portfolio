@@ -56,6 +56,12 @@ body{
         font-size: 10px;
     }
 }
+mark{
+    display: inline-block;
+    line-height: 0;
+    padding-bottom: 0.5em;
+    background-color: rgba(208, 46, 46, 0.3);
+}
 button{
     background-color: transparent;
     cursor: pointer;
