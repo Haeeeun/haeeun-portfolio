@@ -3,11 +3,11 @@
 window.onload = function(){
     const up = $('.nav-up');
     const down = $('.nav-down');
+    const arrows = $('.nav-arrows');
     let counter = 1;
     let number = $('.number');
 
     function moveDown(currentSlide) {
-
         var nextSlide = currentSlide.next();
         var currentSlideUp = currentSlide.find('.txt');
         var currentSlideDown = currentSlide.find('.img');
@@ -20,25 +20,26 @@ window.onload = function(){
 
             counter = counter + 1;
 
-            if( counter % 2 === 0 ) {
-
+            if (counter % 2 === 0) {
                 TweenMax.to(number, 0.3, {x: '-100%'})
-                TweenMax.to( currentSlideUp, 0.4, { y: '-100%', delay:0.15 });
-                TweenMax.to( currentSlideDown, 0.4, { y: '100%', delay:0.15 });
-                setTimeout(function() {number.html('')},300);
+                TweenMax.to(currentSlideUp, 0.4, {y: '-100%', delay: 0.15});
+                TweenMax.to(currentSlideDown, 0.4, {y: '100%', delay: 0.15});
+                setTimeout(function () {
+                    number.html('')
+                }, 300);
 
             } else {
 
-                number.html('0'+counter);
-                TweenMax.to(number, 0.3, {x: '0%', delay:1})
-                TweenMax.to( currentSlideUp, 0.4, { y: '100%', delay:0.15 });
-                TweenMax.to( currentSlideDown, 0.4, { y: '-100%', delay:0.15 });
+                number.html('0' + counter);
+                TweenMax.to(number, 0.3, {x: '0%', delay: 1})
+                TweenMax.to(currentSlideUp, 0.4, {y: '100%', delay: 0.15});
+                TweenMax.to(currentSlideDown, 0.4, {y: '-100%', delay: 0.15});
             }
 
-            TweenMax.to( currentCopy, 0.3, {autoAlpha: 0, delay:0.15});
-            TweenMax.to( nextCopy, 0.3, {autoAlpha: 1, delay:1});
-            TweenMax.to( nextSlideUp, 0.4, { y: '0%', delay:0.15 });
-            TweenMax.to( nextSlideDown, 0.4, { y: '0%', delay:0.15 });
+            TweenMax.to(currentCopy, 0.3, {autoAlpha: 0, delay: 0.15});
+            TweenMax.to(nextCopy, 0.3, {autoAlpha: 1, delay: 1});
+            TweenMax.to(nextSlideUp, 0.4, {y: '0%', delay: 0.15});
+            TweenMax.to(nextSlideDown, 0.4, {y: '0%', delay: 0.15});
 
             $(currentSlide).removeClass('active');
             $(nextSlide).addClass('active');
@@ -91,7 +92,7 @@ window.onload = function(){
 
     function hideNav() {
 
-        if( counter == $('.slide').length) {
+        if( counter === $('.slide').length) {
             TweenMax.to($('.nav-down'),0.5, {autoAlpha: 0, delay:0.5} );
         }else {
             TweenMax.to($('.nav-down'),0.5, {autoAlpha: 1, delay:0.5} );
@@ -106,23 +107,27 @@ window.onload = function(){
 
 
     down.on('click', function() {
-
         var currentSlide = $('.active');
+        if(currentSlide[0].dataset.order === "2"){
+           arrows[0].classList.add('svg_white');
+        } else{
+            arrows[0].classList.remove('svg_white');
+        }
         moveDown(currentSlide);
         hideNav();
 
     });
 
     up.on('click', function() {
-
         var currentSlide = $('.active');
+        if(currentSlide[0].dataset.order === "4"){
+            arrows[0].classList.add('svg_white');
+        } else{
+            arrows[0].classList.remove('svg_white');
+        }
         moveUp(currentSlide);
         hideNav();
-
     });
-
-
-
 }
 
 
