@@ -136,6 +136,7 @@ button{
 }
 .slider-content .slide:first-child .txt {
     margin-right: 0 !important;
+    width: 100% !important;
 }
 .slider-content .slide:nth-child(odd) .img {
     margin-left: 50%;
